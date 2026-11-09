@@ -1,5 +1,13 @@
 # The Riddle Library / Die Rätselbibliothek
 
+## Vercel deployment
+
+`vercel.json` publishes the complete browser-based game from `static/`. No build command, package installation, Python server or environment variables are needed. English/German, progressive hints, browser auto-save, JSON import/export and restart all work in this edition.
+
+Import this repository into Vercel with framework **Other**. The checked-in configuration sets the output directory to `static`. Alternatively, with an authenticated Vercel CLI, run `vercel --prod` from the project root. The Streamlit edition remains a separate local/Community Cloud option.
+
+Browser saves belong to the website address: export a local save and import it on the deployed site to move progress. Loading the hosted site initially requires internet access; running the local edition remains the fully offline option.
+
 ## Streamlit edition
 
 ```powershell
