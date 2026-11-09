@@ -1,7 +1,7 @@
 """Run with: python -m streamlit run streamlit_app.py"""
 import json
 import streamlit as st
-from game import IDS, OBJECTS, PUZZLES, TEXT, answer, fresh, unlock, validate
+from game import IDS, OBJECTS, DIGITS, TEXT, answer, fresh, unlock, restore, selected
 
 st.set_page_config(page_title="The Riddle Library", page_icon="📚", layout="wide")
 st.session_state.setdefault("game", fresh())
@@ -15,7 +15,7 @@ def set_language():
 
 
 def restart():
-    st.session_state.game = fresh(st.session_state.language)
+    st.session_state.game = fresh(st.session_state.language, st.session_state.game)
     st.session_state.message = ""
     for key in list(st.session_state):
         if key.startswith("answer_") or key == "exit_code":
@@ -30,9 +30,7 @@ def import_save():
         if file.size > 10000:
             raise ValueError("Save too large")
         saved = json.loads(file.getvalue())
-        if not validate(saved):
-            raise ValueError("Invalid save")
-        st.session_state.game = {k: saved[k] for k in fresh()}
+        st.session_state.game = restore(saved)
         st.session_state.language = saved["lang"]
         st.session_state.message = "loaded"
     except (ValueError, TypeError, UnicodeError):
@@ -67,8 +65,8 @@ with left:
     index = OBJECTS.index(active)
     st.header(t["names"][index])
     st.write(t["descriptions"][index])
-    if active in PUZZLES:
-        p = PUZZLES[active][s["lang"]]
+    if active in IDS:
+        p = selected(s, active)[s["lang"]]
         solved = active in s["solved"]
         st.markdown(f'> {p["q"]}')
         with st.form(f"riddle_{active}"):
@@ -101,11 +99,13 @@ with right:
     st.caption(t["codeHelp"])
     for i, key in enumerate(IDS, 1):
         st.metric((f"Digit {i}" if s["lang"] == "en" else f"Ziffer {i}"),
-                  PUZZLES[key]["digit"] if key in s["solved"] else "—")
+                  DIGITS[key] if key in s["solved"] else "—")
     st.caption(t["order"])
 if s["escaped"]:
     st.success(t["victoryTitle"] + " " + t["victoryText"])
 st.divider()
+st.caption('12 riddles · Restart for a new set. No repeats until the pool is exhausted.'
+           if s['lang'] == 'en' else '12 Rätsel · Neues Spiel für neue Rätsel. Keine Wiederholung, bis alle gespielt wurden.')
 st.markdown('[Riddles adapted from RiddlesGo](https://riddlesgo.com/english-riddles/)'
             if s["lang"] == "en" else '[Rätsel nach RiddlesGo](https://riddlesgo.com/english-riddles/)')
 st.caption("No AI or external APIs. Export your save before closing or refreshing this session."

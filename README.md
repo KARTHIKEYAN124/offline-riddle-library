@@ -1,6 +1,8 @@
 # The Riddle Library / Die Rätselbibliothek
 
-The three classic riddles are adapted from [RiddlesGo’s English riddles collection](https://riddlesgo.com/english-riddles/). German translations and optional hints were created for this game. Content is bundled locally; no live website access is required during gameplay.
+The bank contains 12 bilingual riddles: three classics adapted from [RiddlesGo’s English riddles collection](https://riddlesgo.com/english-riddles/) and nine original library puzzles. German translations and optional hints were created for this game. Content is bundled locally; no live website access is required during gameplay.
+
+Each new game draws three different riddles from a shuffled pool. Choose **Restart game / Neues Spiel** for the next set. All 12 appear before the pool reshuffles, and consecutive games never share a riddle. Refreshing, switching languages and importing a save preserve the current selection. The saved state includes the remaining pool, so restarting does not forget the rotation. Older saves keep their original riddles and join the rotation on restart.
 
 ## Vercel deployment
 
