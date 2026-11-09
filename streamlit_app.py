@@ -106,5 +106,7 @@ with right:
 if s["escaped"]:
     st.success(t["victoryTitle"] + " " + t["victoryText"])
 st.divider()
+st.markdown('[Riddles adapted from RiddlesGo](https://riddlesgo.com/english-riddles/)'
+            if s["lang"] == "en" else '[Rätsel nach RiddlesGo](https://riddlesgo.com/english-riddles/)')
 st.caption("No AI or external APIs. Export your save before closing or refreshing this session."
            if s["lang"] == "en" else "Keine KI oder externen APIs. Exportiere deinen Spielstand vor dem Schließen oder Neuladen.")

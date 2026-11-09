@@ -1,5 +1,7 @@
 # The Riddle Library / Die Rätselbibliothek
 
+The three classic riddles are adapted from [RiddlesGo’s English riddles collection](https://riddlesgo.com/english-riddles/). German translations and optional hints were created for this game. Content is bundled locally; no live website access is required during gameplay.
+
 ## Vercel deployment
 
 `vercel.json` publishes the complete browser-based game from `static/`. No build command, package installation, Python server or environment variables are needed. English/German, progressive hints, browser auto-save, JSON import/export and restart all work in this edition.

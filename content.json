@@ -3,36 +3,40 @@
     "desk": {
       "digit": "4",
       "en": {
-        "q": "I have keys, but open no locks. I have space, but no room. You can enter, but cannot go inside. What am I?",
+        "q": "My keys make music, yet none can turn a lock. Name the instrument.",
         "answers": [
-          "keyboard",
-          "a keyboard",
-          "computer keyboard"
+          "piano",
+          "a piano",
+          "grand piano",
+          "a grand piano"
         ],
         "hints": [
-          "You use me with a computer.",
-          "My space is a bar.",
-          "Look at what you type on."
+          "Think of an instrument.",
+          "Its keys are black and white.",
+          "A pianist plays it."
         ]
       },
       "de": {
-        "q": "Ich habe Tasten, aber keine Schlösser. Ich habe eine Leertaste, aber keinen leeren Raum. Du kannst Enter drücken, aber nicht hineingehen. Was bin ich?",
+        "q": "Meine Tasten machen Musik, doch keine öffnet ein Schloss. Welches Instrument bin ich?",
         "answers": [
-          "tastatur",
-          "eine tastatur",
-          "computertastatur"
+          "klavier",
+          "ein klavier",
+          "piano",
+          "flügel",
+          "fluegel",
+          "ein flügel"
         ],
         "hints": [
-          "Du benutzt mich mit einem Computer.",
-          "Meine Tasten enthalten Buchstaben.",
-          "Du tippst auf mir."
+          "Denke an ein Instrument.",
+          "Seine Tasten sind schwarz und weiß.",
+          "Ein Pianist spielt darauf."
         ]
       }
     },
     "bookshelf": {
       "digit": "7",
       "en": {
-        "q": "The more you take, the more you leave behind. What are they?",
+        "q": "With every step forward, more of these remain behind you. What are they?",
         "answers": [
           "footsteps",
           "steps",
@@ -45,7 +49,7 @@
         ]
       },
       "de": {
-        "q": "Je mehr du machst, desto mehr lässt du hinter dir. Was ist gemeint?",
+        "q": "Mit jedem Schritt nach vorn bleiben mehr davon hinter dir. Was ist gemeint?",
         "answers": [
           "schritte",
           "fußspuren",
@@ -62,7 +66,7 @@
     "painting": {
       "digit": "2",
       "en": {
-        "q": "I have cities, but no houses; forests, but no trees; and water, but no fish. What am I?",
+        "q": "My cities contain no actual buildings, and my mountains have no living trees. What am I?",
         "answers": [
           "map",
           "a map",
@@ -75,7 +79,7 @@
         ]
       },
       "de": {
-        "q": "Ich habe Städte, aber keine Häuser; Wälder, aber keine Bäume; und Wasser, aber keine Fische. Was bin ich?",
+        "q": "Meine Städte enthalten keine echten Gebäude, und auf meinen Bergen wachsen keine lebenden Bäume. Was bin ich?",
         "answers": [
           "karte",
           "landkarte",
@@ -200,5 +204,10 @@
       "noHints": "Alle Hinweise angezeigt",
       "doneHint": "Rätsel gelöst"
     }
+  },
+  "source": {
+    "title": "RiddlesGo — English riddles",
+    "url": "https://riddlesgo.com/english-riddles/",
+    "note": "Three classic riddles adapted from the collection; German translations and hints created for this game."
   }
 }

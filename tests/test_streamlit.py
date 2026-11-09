@@ -14,7 +14,7 @@ class StreamlitTests(unittest.TestCase):
 
     def test_complete_english_flow(self):
         app = self.app()
-        for obj, value in [("desk", "keyboard"), ("bookshelf", "footsteps"), ("painting", "map")]:
+        for obj, value in [("desk", "piano"), ("bookshelf", "footsteps"), ("painting", "map")]:
             app.radio[0].set_value(obj).run()
             app.text_input(key=f"answer_{obj}").set_value(value)
             next(b for b in app.button if b.label == "Check answer").click().run()
@@ -31,7 +31,7 @@ class StreamlitTests(unittest.TestCase):
         app.selectbox(key="language").set_value("de").run()
         self.assertEqual(app.session_state.game["hints"]["desk"], 1)
         self.assertEqual(app.title[0].value, "Jede Antwort öffnet eine Tür.")
-        app.text_input(key="answer_desk").set_value("Tastatur")
+        app.text_input(key="answer_desk").set_value("Klavier")
         next(b for b in app.button if b.label == "Antwort prüfen").click().run()
         self.assertIn("desk", app.session_state.game["solved"])
         app.checkbox[0].check().run()

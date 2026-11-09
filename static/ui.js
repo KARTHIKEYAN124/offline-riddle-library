@@ -18,4 +18,6 @@ $('restart').onclick=()=>{if(!confirm(texts[state.lang].confirm))return;const la
 $('save').onclick=()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='riddle-library-save.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
 $('load').onclick=()=>$('file').click();
 $('file').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>10000)throw Error();const s=JSON.parse(await file.text());if(!Game.valid(s))throw Error();state={version:1,lang:s.lang,active:s.active,solved:[...s.solved],hints:{desk:s.hints.desk,bookshelf:s.hints.bookshelf,painting:s.hints.painting},attempts:s.attempts,escaped:s.escaped};message='loaded';$('answer').value='';$('code').value='';persist();}catch{message='badSave';}e.target.value='';render();};
+const originalRender=render;
+render=function(){originalRender();$('riddleSource').textContent=state.lang==='en'?'Riddles adapted from RiddlesGo · English riddles':'Rätsel nach RiddlesGo · Englische Rätsel';};
 render();
